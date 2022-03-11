@@ -13,13 +13,13 @@ import android.content.Context
 * */
 class SunnyWeatherApplication :Application(){
     companion object{
+        //彩云天气申请的令牌
+        const val TOKEN = "cBse8gtfmcCQJG4y"
         //将context设置为静态变量很容易会产生内存泄漏问题,所以这是一种有风险的做法,但是由于这里获取的并不是Activity或者service的context
         //而是application的,它全局只会存在一份实例,并且在整个程序的生命周期内都不会回收,因此不存在内存泄漏,所以可以使用如下注解,让Android Studio
         //忽略警告提示
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
-        //添加彩云天气申请的令牌
-        const val TOKEN = "彩云令牌申请暂时未通过,先用这串字符串代替"
     }
 
     override fun onCreate() {

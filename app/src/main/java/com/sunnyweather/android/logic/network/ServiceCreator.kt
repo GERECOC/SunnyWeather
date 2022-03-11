@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceCreator {
-    private  const val BASE_URL = "https://api.caiyunapp.com/"
+    val BASE_URL = "https://api.caiyunapp.com/"
 
     //private val platform = Retrofit.Builder()
     //private val builder = platform.baseUrl(BASE_URL)

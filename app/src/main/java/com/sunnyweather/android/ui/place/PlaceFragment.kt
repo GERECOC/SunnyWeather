@@ -40,10 +40,11 @@ class PlaceFragment:Fragment() {
             }else{
                 recyclerView.visibility = View.GONE
                 bgImageView.visibility = View.VISIBLE
+                viewModel.placeList.clear()
                 adapter.notifyDataSetChanged()
             }
         }
-        viewModel.placeLiveData.observe(this, Observer { result ->
+        viewModel.placeLiveData.observe(viewLifecycleOwner){ result ->
             val places = result.getOrNull()
             if (places != null){
                 recyclerView.visibility - View.VISIBLE
@@ -55,6 +56,6 @@ class PlaceFragment:Fragment() {
                 Toast.makeText(activity,"未能查询到任何地点",Toast.LENGTH_SHORT).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
-        })
+        }
     }
 }
